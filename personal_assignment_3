@@ -1,0 +1,47 @@
+class Member:
+    def __init__(self, name, username, password):
+        self.name = name
+        self.username = username
+        self.passwd = password
+
+    def display(self):
+        print("name:%s, username:%s" % (self.name, self.username))
+
+
+class Post:
+    def __init__(self, title, content, author):
+        self.title = title
+        self.content = content
+        self.author = author
+
+# 코드 실행
+
+
+members = []
+posts = []
+
+members.append(Member("가나다", "김철수", "0000"))
+members.append(Member("라마바", "김영희", "1111"))
+members.append(Member("사아자", "홍길동", "2222"))
+
+members[0].display()
+members[1].display()
+members[2].display()
+
+posts.append(Post("title1", "content1", members[0].username))
+posts.append(Post("title2", "content2", members[0].username))
+posts.append(Post("title3", "content3", members[0].username))
+posts.append(Post("title4", "content4", members[1].username))
+posts.append(Post("title5", "content5", members[1].username))
+posts.append(Post("title6", "content6", members[1].username))
+posts.append(Post("title7", "content7", members[2].username))
+posts.append(Post("title8", "content8", members[2].username))
+posts.append(Post("title9", "content9", members[2].username))
+
+for post in posts:
+    if post.author == '홍길동':
+        print(post.title)
+
+for post in posts:
+    if 'content1' in post.content:
+        print(post.title)
